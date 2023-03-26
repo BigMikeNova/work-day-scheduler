@@ -1,12 +1,12 @@
 //Date/Time display
-var todayDate = moment().format('dddd, MMM Do YYYY');
-$("#currentDay").html(todayDate);
+var now= dayjs()
+$("#currentDay").text(now.format('MMM D, YYYY'));
 
 //event listener and local storage
 $(document).ready(function () {
   $(".saveBtn").on("click", function() {
       var text = $(this).siblings(".description").val();
-      var time = @arguments(this).parent().attr("id");
+      var time = arguments(this).parent().attr("id");
       localStorage.setItem(time, text);
   })
 
