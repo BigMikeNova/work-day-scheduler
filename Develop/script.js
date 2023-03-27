@@ -1,6 +1,6 @@
 //Date/Time display
 var now= dayjs()
-$("#currentDay").text(now.format('MMM D, YYYY'));
+$("#currentDay").text(now.format('MMM D, YYYY, h:mm a'));
 
 //event listener and local storage
 $(document).ready(function () {
