@@ -1,31 +1,21 @@
 //Date/Time display
+const storageInput = document.querySelector('.description');
+const button = document.querySelector('.saveBtn');
+
 var now= dayjs()
 $("#currentDay").text(now.format('MMM D, YYYY, h:mm a'));
 
 var toDoInput = document.querySelector("description");
 
-var toDos = [];
-
-
-function init() {
-  var storedTodos = JSON.parse(localStorage.getItem(toDoInput));
-
-  if (storedTodos !== null) {
-    toDos = storedTodos;
-  }
-};
-
-function storeTodos() {
-  localStorage.setItem("description", JSON.stringify(toDoInput));
-};
 
 //event listener and local storage
 $(document).ready(function () {
-  $(".saveBtn").on("click", function(event) {
-    event.preventDefault();
-    
-    var text = $(this).siblings("description").val();
-    
+  $(button).on("click", function() {    
+    if($(storageInput).val() !== ""){
+      localStorage.setItem(storageInput).val();
+
+      alert("Schedule Saved!");
+    }
   });
   
   function timeTracker() {
@@ -38,16 +28,19 @@ $(document).ready(function () {
                 $(this).addClass("past");
                 $(this).removeClass("future");
                 $(this).removeClass("present");
+                console.log("<");
             }
             else if (blockTime === timeNow) {
                 $(this).removeClass("past");
                 $(this).addClass("present");
                 $(this).removeClass("future");
+                console.log("===");
             }
             else {
                 $(this).removeClass("present");
                 $(this).removeClass("past");
                 $(this).addClass("future");
+                console.log(">");
             }
     })
   }
