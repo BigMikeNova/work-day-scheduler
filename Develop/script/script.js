@@ -1,6 +1,6 @@
 //Date/Time display
-const storageInput = document.querySelector('.description');
-const button = document.querySelector('.fa-save');
+const storageInput = document.querySelector('description');
+
 
 var now= dayjs()
 $("#currentDay").text(now.format('MMM D, YYYY, h:mm a'));
@@ -10,9 +10,9 @@ var toDoInput = document.querySelector("description");
 
 //event listener and local storage
 $(document).ready(function () {
-  $(button).on("click", function() {    
-    if($(storageInput).val() !== ""){
-      localStorage.setItem(storageInput).val();
+  $('.saveBtn').on("click", function() {    
+    if($('.description').val() !== ""){
+      localStorage.setItem(storageInput, JSON.stringify(storageInput));
         $("#hour8 .description").val(localStorage.getItem("hour8"));
         $("#hour9 .description").val(localStorage.getItem("hour9"));
         $("#hour10 .description").val(localStorage.getItem("hour10"));
@@ -24,8 +24,6 @@ $(document).ready(function () {
         $("#hour16 .description").val(localStorage.getItem("hour16"));
         $("#hour17 .description").val(localStorage.getItem("hour17"));
         $("#hour18 .description").val(localStorage.getItem("hour18"));
-
-      alert("Schedule Saved!");
     }
   });
   
