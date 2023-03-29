@@ -10,7 +10,7 @@ var toDoInput = document.querySelector("description");
 
 //event listener and local storage
 $(document).ready(function () {
-  $('.saveBtn').on("click", function() {    
+  $(".saveBtn").on("click", function() {    
     if($('.description').val() !== ""){
       localStorage.setItem(storageInput, JSON.stringify(storageInput));
         $("#hour8 .description").val(localStorage.getItem("hour8"));
