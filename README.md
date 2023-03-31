@@ -1,5 +1,10 @@
 # 05 Third-Party APIs: Work Day Scheduler
 
+https://bigmikenova.github.io/work-day-scheduler/
+
+![image](https://user-images.githubusercontent.com/125073452/229249836-f91224e7-bfeb-489d-a4e1-6ef353c1d57f.png)
+
+
 ## Your Task
 
 Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
